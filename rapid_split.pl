@@ -20,7 +20,7 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
-#!/usr/bin/env/perl -w
+#!/usr/bin/env perl -w
 # kj2 08.10.2020
 
 use strict;
