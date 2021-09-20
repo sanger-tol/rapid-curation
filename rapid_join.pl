@@ -21,7 +21,7 @@
 #SOFTWARE.
 
 
-#!/software/bin/perl -w
+#!/usr/bin/env/perl -w
 # kj2 08.10.2020
 # jmdw added in hap flag and changed output suffix for files
 
