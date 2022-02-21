@@ -1,33 +1,11 @@
-#MIT License
-# 
-#Copyright (c) 2020-2021 Genome Research Ltd.
-# 
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-# 
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-# 
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
-
-
-#!/usr/bin/env perl -w
+#!/software/bin/perl -w
 # kj2 08.10.2020
 # jmdw added in hap flag and changed output suffix for files
 
 use strict;
 use Bio::SeqIO;
 use Getopt::Long;
+no warnings 'uninitialized'; # turn that off for debugging
 
 my $tpf;
 my $fa;
@@ -43,7 +21,7 @@ GetOptions (
     "csv:s" => \$csvin,
     "hap"   => \$hap,
     "h"     => \$help,
-    "help"  =>   \$help,
+    "help"  => \$help,
 );
 
 if (($help) || (!$fa) || (!$tpf)) {
@@ -82,6 +60,7 @@ my %seqhash;
 my $seqin  = Bio::SeqIO->new('-format' => 'fasta',
                              '-file'   => $fa);
 while (my $seqobj = $seqin->next_seq()) {
+    die("ERROR: you are trying to run rapid_join.pl on a full curation file\n") if $seqobj->display_id =~/_ctg1/;
     $seqhash{$seqobj->display_id} = $seqobj;
 }
 
@@ -98,6 +77,7 @@ my %assembly;
 while (<TPF>) {
     $no++;
     my $line = $_;
+    next if $line =~/^\n/;
     chomp;
     
     # gaps
@@ -289,6 +269,9 @@ foreach my $c (reverse sort {$chrom{$a}->{total} <=> $chrom{$b}->{total}} keys %
     my $first = 1;
     my $no = 1;
     foreach my $sub (@{$chrom{$c}->{parts}}) {
+
+	die "ERROR: $sub (from $csvin) is not in the TPF ($tpf)\n " unless $assembly{$sub};
+
         if ($first) {
             print CSVOUT "$sub,$chrname,yes\n";
 #            print TSVC   "$sub\t$chrname\tChromosome\n";
@@ -315,35 +298,4 @@ foreach my $c (reverse sort {$chrom{$a}->{total} <=> $chrom{$b}->{total}} keys %
 foreach my $key (keys %assembly) {
     $secondout->write_seq($assembly{$key}) unless (exists $done{$key});
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
