@@ -1,4 +1,4 @@
-``# Rapid curation - Curation tools guide
+### Rapid curation - Curation tools guide
 
 This section will cover the curation tools and how they work.
 
