@@ -35,6 +35,7 @@ RAPID CURATION TRAINING MANUAL.pdf
 Pretext maps and assembly files can be found in the test_data/ repository.
 
 A training environment can be accessed (requires github account) that contains all the scripts and data, feel free to have a play!
+
 http://gitpod.io/#https://github.com/thebgacademy/manual-curation
 
 
