@@ -54,11 +54,11 @@ Once the map has been rearranged and meta-data tags added paint the chromosomes 
 Export the map to AGP. (Some input scaffolds won't feature in the output AGP due to PretextView resolution.  
 These will be recovered in the next step).
 
-Run pretext-to-tpf , pointing it at the TPF and the Pretext AGP. 
+Run [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git) , pointing it at the TPF and the Pretext AGP. 
 This will output TPF(s) that mirror the chromosomes that have been built in PretextView, and which will have the same number 
 of basepairs as the original TPF.The script will produce stats (joins/breaks/hap-dup removals).
 
-Turn the new TPF back into a fasta file using rapid_join.pl.
+Turn the new TPF back into a fasta file using [rapid_join.pl](-/blob/main/rapid_join.pl).
 
 Produce a new Pretext map from the curated fasta file to check it.
 
