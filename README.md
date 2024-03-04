@@ -24,9 +24,12 @@ PretextView can be obtained here
 https://github.com/wtsi-hpag/PretextView/releases
 ```
 
-Please also see documentation:
+To generate the analysis data used for curation run one of the nextflow pipelines:
+https://pipelines.tol.sanger.ac.uk/treeval
+Full pipeline can include files for displaying in JBrowse2 as a companion to the Hi-C 2D contact map
 
-RAPID CURATION TRAINING MANUAL.pdf
+https://pipelines.tol.sanger.ac.uk/curationpretext
+
 
 
 
@@ -38,6 +41,9 @@ A training environment can be accessed (requires github account) that contains a
 
 http://gitpod.io/#https://github.com/thebgacademy/manual-curation
 
+Please also see documentation:
+
+RAPID CURATION TRAINING MANUAL.pdf
 
  
 ## Suggested workflow
@@ -73,6 +79,8 @@ rapid_join.pl
 pretext-to-tpf.py
 
 telo_finder.py
+
+
 
 
 **Scripts and documentation for Rapid curation:**
