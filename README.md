@@ -12,7 +12,7 @@ This section will cover the curation tools and how they work.
 PretextView tutorial:
 * [PDF](-/blob/main/Tutorial.pdf)
 * [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
-* [YouTube video 2)](https://youtu.be/LWy6pwCQNDU)
+* [YouTube video 2](https://youtu.be/LWy6pwCQNDU)
 
 
 PretextView can be obtained here https://github.com/wtsi-hpag/PretextView/releases
