@@ -1,4 +1,4 @@
-# Rapid curation - Curation tools guide
+``# Rapid curation - Curation tools guide
 
 This section will cover the curation tools and how they work.
 
@@ -79,12 +79,15 @@ This script takes a fasta file and produces a TPF on contig level, i.e. it split
 
 Usage:
 
-perl split.pl -fa <fasta>
+```
+perl rapid_split.pl
+              -fa <fasta>
 
               -printfa # if you want to print out the split fasta
 
               -h/help  # this message
 	      
+```
 
 
 ##  pretext-to-tpf.py	
@@ -93,7 +96,10 @@ git clone https://github.com/sanger-tol/agp-tpf-utils.git
 
 This script takes the AGP output from PretextView and the TPF from rapid_split to generate new assembly tpfs
 
-Usage: pretext-to-tpf [OPTIONS]
+Usage: 
+
+```
+pretext-to-tpf [OPTIONS]
 
 Options:
   -a, --assembly PATH             Assembly file from before curation, which is
@@ -113,6 +119,7 @@ Options:
                                   Write messages into a '.log' file alongside
                                   the output file  [default: no-write-log]
   --help                          Show this message and exit.
+```
 
 See https://github.com/sanger-tol/agp-tpf-utils# for complete documentation
 
@@ -124,12 +131,15 @@ This script takes an original assembly fasta file, a one-line per chromosome pre
 
 Usage:
 
-perl rapid_join.pl -fa <fasta>
+```
+perl rapid_join.pl
+             -fa <fasta>
              -tpf <tpf>
              -csv <pre-csv>
              -out <outfile_fasta_prefix>
              -hap # optional use only if generating haplotigs fasta
 
+```
 
 
 
@@ -143,8 +153,9 @@ It assumes the assemblies are high quality (hi-fi or similar) and that there are
 It uses a hard-coded set of non-redundant telomere motifs with which it attempts to distinguish true telomere sequences from background noise.
 
 
-usage: telo_finder.py [-h] [--size size] [--klo klo] [--khi khi] [--ends ends]
-                      fasta
+Usage: 
+```
+telo_finder.py [-h] [--size size] [--klo klo] [--khi khi] [--ends ends] fasta
 
 Finds most likely telomere motif in Hi-fi or equivalent quality assembly where
 telomeres are expected to occur at the ends of multiple scaffolds
@@ -159,3 +170,5 @@ optional arguments:
   --khi khi    max kmer (default: 15)
   --ends ends  ends to scan (default: 1000)
   
+```
+
