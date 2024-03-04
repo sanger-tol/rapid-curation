@@ -67,9 +67,13 @@ Produce a new Pretext map from the curated fasta file to check it.
 ## Scripts
 
 rapid_split.pl
+
 rapid_join.pl
+
 pretext-to-tpf.py
+
 telo_finder.py
+
 
 **Scripts and documentation for Rapid curation:**
 
