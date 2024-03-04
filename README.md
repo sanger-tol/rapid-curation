@@ -94,7 +94,7 @@ perl rapid_split.pl
 
 
 ##  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
-top install:
+to install:
 ```
 git clone https://github.com/sanger-tol/agp-tpf-utils.git
 ```
