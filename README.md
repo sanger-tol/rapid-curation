@@ -94,8 +94,10 @@ perl rapid_split.pl
 
 
 ##  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
-
+top install:
+```
 git clone https://github.com/sanger-tol/agp-tpf-utils.git
+```
 
 This script takes the AGP output from PretextView and the TPF from rapid_split to generate new assembly tpfs
 
