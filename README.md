@@ -6,15 +6,13 @@ This section will cover the curation tools and how they work.
 
 ## Support 
 
-Slack Channel for curation assembly help: https://join.slack.com/t/assemblycuration/shared_invite/zt-1kx2ww71y-823ruaAxswgQGypgofBaOA
+[Slack Channel for curation assembly help](https://join.slack.com/t/assemblycuration/shared_invite/zt-1kx2ww71y-823ruaAxswgQGypgofBaOA)
 
 
 PretextView tutorial:
-
-PretextView 
-- [PDF](-/blob/main/Tutorial.pdf)
-- [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
-- [YouTube video 2)](https://youtu.be/LWy6pwCQNDU)
+* [PDF](-/blob/main/Tutorial.pdf)
+* [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
+* [YouTube video 2)](https://youtu.be/LWy6pwCQNDU)
 
 
 PretextView can be obtained here https://github.com/wtsi-hpag/PretextView/releases
