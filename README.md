@@ -27,6 +27,7 @@ https://github.com/wtsi-hpag/PretextView/releases
 To generate the analysis data used for curation run one of the nextflow pipelines:
 
 https://pipelines.tol.sanger.ac.uk/treeval
+
 Full pipeline can include files for displaying in JBrowse2 as a companion to the Hi-C 2D contact map
 
 
