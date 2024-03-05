@@ -77,7 +77,7 @@ Produce a new Pretext map from the curated fasta file to check it.
 
 **Scripts and documentation for Rapid curation:**
 
-## [rapid_split.pl](-/blob/main/rapid_split.pl)
+### [rapid_split.pl](-/blob/main/rapid_split.pl)
 
 This script takes a fasta file and produces a TPF on contig level, i.e. it splits at all Ns
 
@@ -94,7 +94,7 @@ perl rapid_split.pl
 ```
 
 
-##  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
+###  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
 to install:
 ```
 git clone https://github.com/sanger-tol/agp-tpf-utils.git
@@ -131,7 +131,7 @@ See https://github.com/sanger-tol/agp-tpf-utils# for complete documentation
 
 
 
-## [rapid_join.pl](-/blob/main/rapid_join.pl)
+### [rapid_join.pl](-/blob/main/rapid_join.pl)
 
 This script takes an original assembly fasta file, a one-line per chromosome pre-csv file and the TPF file(s) generated from pretext-to-tpf and creates the finalised assembly fasta from the TPF file(s)
 
