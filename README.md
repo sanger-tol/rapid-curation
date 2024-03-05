@@ -1,10 +1,10 @@
-## Rapid curation - Curation tools guide
+# Rapid curation - Curation tools guide
 
 This section will cover the curation tools and how they work.
 
 
 
-# Support 
+## Support 
 
 Slack Channel for curation assembly help:
 ```
@@ -88,7 +88,7 @@ telo_finder.py
 
 **Scripts and documentation for Rapid curation:**
 
-## rapid_split.pl
+### rapid_split.pl
 
 This script takes a fasta file and produces a TPF on contig level, i.e. it splits at all Ns
 
@@ -105,7 +105,7 @@ perl rapid_split.pl
 ```
 
 
-##  pretext-to-tpf.py	
+###  pretext-to-tpf.py	
 
 git clone https://github.com/sanger-tol/agp-tpf-utils.git
 
@@ -140,7 +140,7 @@ See https://github.com/sanger-tol/agp-tpf-utils# for complete documentation
 
 
 
-## rapid_join.pl
+### rapid_join.pl
 
 This script takes an original assembly fasta file, a one-line per chromosome pre-csv file and the TPF file(s) generated from pretext-to-tpf and creates the finalised assembly fasta from the TPF file(s)
 
@@ -159,7 +159,7 @@ perl rapid_join.pl
 
 
 
-## Other scripts
+### Other scripts
 
 Telomere identification script (telo_finder.py):
 
