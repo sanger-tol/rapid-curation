@@ -1,4 +1,4 @@
-### Rapid curation - Curation tools guide
+# Rapid curation - Curation tools guide
 
 This section will cover the curation tools and how they work.
 
@@ -19,8 +19,11 @@ PretextView can be obtained here https://github.com/wtsi-hpag/PretextView/releas
 
 
 To generate the analysis data used for curation run one of the nextflow pipelines:
+
 https://pipelines.tol.sanger.ac.uk/treeval
-Full pipeline can include files for displaying in JBrowse2 as a companion to the Hi-C 2D contact map
+
+Full pipeline above can include files for displaying in JBrowse2 as a companion to the Hi-C 2D contact map
+
 
 https://pipelines.tol.sanger.ac.uk/curationpretext
 
@@ -147,7 +150,7 @@ perl rapid_join.pl
 
 
 
-## Other scripts
+### Other scripts
 
 Telomere identification script [telo_finder.py](-/blob/main/telo_finder.py):
 
