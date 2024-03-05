@@ -38,6 +38,7 @@ A training environment can be accessed (requires github account) that contains a
 
 http://gitpod.io/#https://github.com/thebgacademy/manual-curation
 
+
 Please also see documentation:
 
 [RAPID_CURATION_TRAINING_MANUAL](-/blob/main/RAPID_CURATION_TRAINING_MANUAL.pdf)
