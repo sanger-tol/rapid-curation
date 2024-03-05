@@ -6,23 +6,17 @@ This section will cover the curation tools and how they work.
 
 ## Support 
 
-Slack Channel for curation assembly help:
-```
-https://join.slack.com/t/assemblycuration/shared_invite/zt-1kx2ww71y-823ruaAxswgQGypgofBaOA
-```
+[Slack Channel for curation assembly help](https://join.slack.com/t/assemblycuration/shared_invite/zt-1kx2ww71y-823ruaAxswgQGypgofBaOA)
+
 
 PretextView tutorial:
+* [PDF](-/blob/main/Tutorial.pdf)
+* [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
+* [YouTube video 2](https://youtu.be/LWy6pwCQNDU)
 
-PretextView - Tutorial.pdf
-```
-https://youtu.be/3IL2Q4f3k3I
-https://youtu.be/LWy6pwCQNDU
-```
 
-PretextView can be obtained here
-```
-https://github.com/wtsi-hpag/PretextView/releases
-```
+PretextView can be obtained here https://github.com/wtsi-hpag/PretextView/releases
+
 
 To generate the analysis data used for curation run one of the nextflow pipelines:
 
@@ -44,14 +38,12 @@ A training environment can be accessed (requires github account) that contains a
 
 http://gitpod.io/#https://github.com/thebgacademy/manual-curation
 
-Please also see documentation:
-
-RAPID CURATION TRAINING MANUAL.pdf
+Please also see documentation: [RAPID CURATION TRAINING MANUAL.pdf](-/blob/main/RAPID%20CURATION%20TRAINING%20MANUAL.pdf)
 
  
 ## Suggested workflow
 
-Split assembly fasta to create a TPF (rapid_split.pl).
+Split assembly fasta to create a TPF [rapid_split.pl](-/blob/main/rapid_split.pl]).
 
 Manipulate the assembly in PretextView app using Edit mode (E).
 Tag unlocalised scaffolds, haplotigs, contaminats, haplotypes etc, using meta-data tag mode (M) in PretextView.
@@ -63,11 +55,11 @@ Once the map has been rearranged and meta-data tags added paint the chromosomes 
 Export the map to AGP. (Some input scaffolds won't feature in the output AGP due to PretextView resolution.  
 These will be recovered in the next step).
 
-Run pretext-to-tpf , pointing it at the TPF and the Pretext AGP. 
+Run [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git) , pointing it at the TPF and the Pretext AGP. 
 This will output TPF(s) that mirror the chromosomes that have been built in PretextView, and which will have the same number 
 of basepairs as the original TPF.The script will produce stats (joins/breaks/hap-dup removals).
 
-Turn the new TPF back into a fasta file using rapid_join.pl.
+Turn the new TPF back into a fasta file using [rapid_join.pl](-/blob/main/rapid_join.pl).
 
 Produce a new Pretext map from the curated fasta file to check it.
 
@@ -75,20 +67,17 @@ Produce a new Pretext map from the curated fasta file to check it.
 
 ## Scripts
 
-rapid_split.pl
-
-rapid_join.pl
-
-pretext-to-tpf.py
-
-telo_finder.py
+* [rapid_split.pl](-/blob/main/rapid_split.pl)
+* [rapid_join.pl](-/blob/main/rapid_join.pl)
+* [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
+* [telo_finder.py](-/blob/main/telo_finder.py)
 
 
 
 
 **Scripts and documentation for Rapid curation:**
 
-### rapid_split.pl
+## [rapid_split.pl](-/blob/main/rapid_split.pl)
 
 This script takes a fasta file and produces a TPF on contig level, i.e. it splits at all Ns
 
@@ -105,9 +94,11 @@ perl rapid_split.pl
 ```
 
 
-###  pretext-to-tpf.py	
-
+##  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
+to install:
+```
 git clone https://github.com/sanger-tol/agp-tpf-utils.git
+```
 
 This script takes the AGP output from PretextView and the TPF from rapid_split to generate new assembly tpfs
 
@@ -140,7 +131,7 @@ See https://github.com/sanger-tol/agp-tpf-utils# for complete documentation
 
 
 
-### rapid_join.pl
+## [rapid_join.pl](-/blob/main/rapid_join.pl)
 
 This script takes an original assembly fasta file, a one-line per chromosome pre-csv file and the TPF file(s) generated from pretext-to-tpf and creates the finalised assembly fasta from the TPF file(s)
 
@@ -161,7 +152,7 @@ perl rapid_join.pl
 
 ### Other scripts
 
-Telomere identification script (telo_finder.py):
+Telomere identification script [telo_finder.py](-/blob/main/telo_finder.py):
 
 The telo_finder script aims to detect likely telomere motifs in assemblies.
 It assumes the assemblies are high quality (hi-fi or similar) and that there are a number of chromosomes (it won't return a result with just one chromosome for example).
