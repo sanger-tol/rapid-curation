@@ -10,7 +10,7 @@ This section will cover the curation tools and how they work.
 
 
 PretextView tutorial:
-* [PDF](-/blob/main/PretextView - Tutorial.pdf)
+* [PretextView-Tutorial](-/blob/main/PretextView-Tutorial.pdf)
 * [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
 * [YouTube video 2](https://youtu.be/LWy6pwCQNDU)
 
@@ -40,7 +40,7 @@ http://gitpod.io/#https://github.com/thebgacademy/manual-curation
 
 Please also see documentation: [RAPID_CURATION_TRAINING_MANUAL.pdf](-/blob/main/RAPID_CURATION_TRAINING_MANUAL.pdf)
 
-                               [Interpreting_HiC_Maps_guide.pdf] (-/blob/main/Interpreting_HiC_Maps_guide.pdf)
+                               [Interpreting_HiC_Maps_guide.pdf](-/blob/main/Interpreting_HiC_Maps_guide.pdf)
 
  
 ## Suggested workflow
