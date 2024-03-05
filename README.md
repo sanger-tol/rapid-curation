@@ -10,7 +10,7 @@ This section will cover the curation tools and how they work.
 
 
 PretextView tutorial:
-* [PDF](-/blob/main/Tutorial.pdf)
+* [PDF](-/blob/main/PretextView - Tutorial.pdf)
 * [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
 * [YouTube video 2](https://youtu.be/LWy6pwCQNDU)
 
