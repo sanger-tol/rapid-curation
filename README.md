@@ -28,7 +28,7 @@ To generate the analysis data used for curation run one of the nextflow pipeline
 
 https://pipelines.tol.sanger.ac.uk/treeval
 
-Full pipeline can include files for displaying in JBrowse2 as a companion to the Hi-C 2D contact map
+Full pipeline above can include files for displaying in JBrowse2 as a companion to the Hi-C 2D contact map
 
 
 https://pipelines.tol.sanger.ac.uk/curationpretext
