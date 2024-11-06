@@ -98,6 +98,18 @@ perl rapid_split.pl
 	      
 ```
 
+### [rapid_split.py](-/blob/main/rapid_split.py)
+
+This script takes a fasta file and produces a TPF on contig level, i.e. it splits at all Ns
+
+Usage:
+
+```
+python3 rapid_split.py FASTA > TPF
+
+```
+
+
 
 ###  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
 to install:
@@ -149,6 +161,21 @@ perl rapid_join.pl
              -csv <pre-csv>
              -out <outfile_fasta_prefix>
              -hap # optional use only if generating haplotigs fasta
+
+```
+
+### [rapid_join.py](-/blob/main/rapid_join.py)
+
+This script takes an original assembly fasta file, a one-line per chromosome pre-csv file and the TPF file(s) generated from pretext-to-tpf and creates the finalised assembly fasta from the TPF file(s)
+
+Usage:
+
+```
+python3 rapid_join.py
+             -f,--fasta <fasta>
+             -t,--tpf <tpf>
+             -c,--csv <pre-csv>
+             -o,-out <outfile_fasta_prefix>
 
 ```
 
