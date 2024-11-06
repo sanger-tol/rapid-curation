@@ -29,12 +29,6 @@ tasks:
     cd MicroFinder
     bundler install
 
-
-- name: SETUP - Download the rapid-curation scripts
-  init: |
-    cd /workspace
-    git clone https://github.com/sanger-tol/rapid-curation.git
-
 - name: SETUP - PRETEXT-TO-AGP
   init: |
     cd /workspace
@@ -57,8 +51,6 @@ tasks:
   # and then install pretext-to-tpf
   init: gp sync-await bundle # Wait for previous 'inits' to complete
   command: |
-    cd /workspace/rapid-curation
-    chmod a+x *.pl *.py
     cd /workspace
     /workspace/mambaforge/bin/mamba init bash
     echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
