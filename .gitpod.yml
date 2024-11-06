@@ -1,13 +1,6 @@
 image: gitpod/workspace-full-vnc
 
 tasks:
-- name: SETUP - Download data
-  init: |
-    cd /workspace
-    curl -L "https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data" | tar xzf -
-    mv rapid-curation-main-test_data/test_data ./
-    rmdir rapid-curation-main-test_data
-    gunzip test_data/*.gz
 
 - name: SETUP - Download PretextView
   init: |
@@ -56,7 +49,9 @@ tasks:
     echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
     source ${HOME}/.bashrc
     mamba activate rapid
-    /workspace/mambaforge/bin/pip3 install click ruff bio
+    /workspace/mambaforge/bin/pip3 install click ruff bio gdown
+    gdown --folder --id 1Md0gD7VrmzlRM4xvxQKz2GG3Uyn00VHd
+    mv rapid_curation_test_data test_data
     /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
     export PATH=/workspace:$PATH
     gp preview https://www.thebgacademy.org/BGA24/sessions/Genome-Curation
