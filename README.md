@@ -72,14 +72,6 @@ Produce a new Pretext map from the curated fasta file to check it.
 
 ## Scripts
 
-* [rapid_split.pl](-/blob/main/rapid_split.pl)
-* [rapid_join.pl](-/blob/main/rapid_join.pl)
-* [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
-* [telo_finder.py](-/blob/main/telo_finder.py)
-
-
-
-
 **Scripts and documentation for Rapid curation:**
 
 ### [rapid_split.pl](-/blob/main/rapid_split.pl)
