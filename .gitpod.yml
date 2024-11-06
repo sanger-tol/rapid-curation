@@ -1,0 +1,79 @@
+image: gitpod/workspace-full-vnc
+
+tasks:
+- name: SETUP - Download data
+  init: |
+    cd /workspace
+    curl -L "https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data" | tar xzf -
+    mv rapid-curation-main-test_data/test_data ./
+    rmdir rapid-curation-main-test_data
+    gunzip test_data/*.gz
+
+- name: SETUP - Download PretextView
+  init: |
+    cd /workspace
+    wget  https://github.com/wtsi-hpag/PretextView/releases/download/0.2.5/PretextView_Linux-x86-64.zip
+    unzip PretextView_Linux-x86-64.zip
+
+- name: SETUP - Download MiniProt
+  init: |
+    cd /workspace
+    git clone --depth=1 https://github.com/lh3/miniprot
+    cd miniprot
+    make
+
+- name: SETUP - Download MicroFinder
+  init: |
+    cd /workspace
+    git clone --depth=1 https://github.com/sanger-tol/MicroFinder.git
+    cd MicroFinder
+    bundler install
+
+
+- name: SETUP - Download the rapid-curation scripts
+  init: |
+    cd /workspace
+    git clone https://github.com/sanger-tol/rapid-curation.git
+
+- name: SETUP - PRETEXT-TO-AGP
+  init: |
+    cd /workspace
+    git clone https://github.com/sanger-tol/agp-tpf-utils.git
+
+- name: SETUP - MAMBA ENVIRONMENT
+  init: |
+    cd /workspace
+    wget "https://github.com/conda-forge/miniforge/releases/download/24.3.0-0/Mambaforge-24.3.0-0-Linux-x86_64.sh"
+    bash Mambaforge-24.3.0-0-Linux-x86_64.sh -b -p /workspace/mambaforge && rm Mambaforge-24.3.0-0-Linux-x86_64.sh
+
+    /workspace/mambaforge/bin/mamba init bash
+    source ${HOME}/.bashrc
+    mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y &&
+    gp sync-done bundle
+
+- name: MAIN - TERMINAL TO USE
+  # Installing click and ruff in the mamba environment didn't work for some reason
+  # It is much easier to install via that mamba env's pip3
+  # and then install pretext-to-tpf
+  init: gp sync-await bundle # Wait for previous 'inits' to complete
+  command: |
+    cd /workspace/rapid-curation
+    chmod a+x *.pl *.py
+    cd /workspace
+    /workspace/mambaforge/bin/mamba init bash
+    echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
+    source ${HOME}/.bashrc
+    mamba activate rapid
+    /workspace/mambaforge/bin/pip3 install click ruff
+    /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
+    export PATH=/workspace:$PATH
+    gp preview https://www.thebgacademy.org/BGA24/sessions/Genome-Curation
+    clear
+    bash S2G-manual-curation/welcome.sh
+
+ports:
+  - port: 6080
+    onOpen: open-browser
+    visibility: public
+
+workspaceLocation: "/workspace"

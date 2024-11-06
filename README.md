@@ -32,11 +32,11 @@ https://pipelines.tol.sanger.ac.uk/curationpretext
 
 ## Training data
 
-Pretext maps and assembly files can be found in the test_data/ repository.
+Pretext maps and assembly files can be found at [the GRIT Google Drive](https://drive.google.com/drive/u/0/folders/1Md0gD7VrmzlRM4xvxQKz2GG3Uyn00VHd) 
 
 A training environment can be accessed (requires github account) that contains all the scripts and data, feel free to have a play!
 
-http://gitpod.io/#https://github.com/thebgacademy/manual-curation
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/sanger-tol/rapid-curation)
 
 
 Please also see documentation:
