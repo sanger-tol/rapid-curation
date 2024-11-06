@@ -36,7 +36,7 @@ Pretext maps and assembly files can be found at [the GRIT Google Drive](https://
 
 A training environment can be accessed (requires github account) that contains all the scripts and data, feel free to have a play!
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/sanger-tol/rapid-curation)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Aquatic-Symbiosis-Genomics-Project/rapid-curation)
 
 
 Please also see documentation:
