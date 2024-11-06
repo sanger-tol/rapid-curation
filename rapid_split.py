@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python3
 # usage: python3 rapid_split.py FASTA > TPF
 
 import sys
