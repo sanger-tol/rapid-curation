@@ -56,6 +56,7 @@ tasks:
     export PATH=/workspace:$PATH
     gp preview https://www.thebgacademy.org/BGA24/sessions/Genome-Curation
     clear
+    export PATH=/workspace/mambaforge/bin:/workspace/rapid-curation:$PATH
     bash rapid-curation/welcome.sh
 
 ports:
