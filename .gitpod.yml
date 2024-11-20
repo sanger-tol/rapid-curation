@@ -25,7 +25,7 @@ tasks:
 - name: SETUP - PRETEXT-TO-AGP
   init: |
     cd /workspace
-    git clone https://github.com/sanger-tol/agp-tpf-utils.git
+    git clone --depth 1 --branch v1.0.3 https://github.com/sanger-tol/agp-tpf-utils.git
 
 - name: SETUP - MAMBA ENVIRONMENT
   init: |
