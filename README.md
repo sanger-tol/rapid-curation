@@ -74,105 +74,86 @@ Produce a new Pretext map from the curated fasta file to check it.
 
 **Scripts and documentation for Rapid curation:**
 
-### [rapid_split.pl](-/blob/main/rapid_split.pl)
-
-This script takes a fasta file and produces a TPF on contig level, i.e. it splits at all Ns
-
-Usage:
-
-```
-perl rapid_split.pl
-              -fa <fasta>
-
-              -printfa # if you want to print out the split fasta
-
-              -h/help  # this message
-	      
-```
-
-### [rapid_split.py](-/blob/main/rapid_split.py)
-
-This script takes a fasta file and produces a TPF on contig level, i.e. it splits at all Ns
-
-Usage:
-
-```
-python3 rapid_split.py FASTA > TPF
-
-```
-
-
-
-###  [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git)
+###  [pretext-to-asm](https://github.com/sanger-tol/agp-tpf-utils.git)
 to install:
 ```
 git clone https://github.com/sanger-tol/agp-tpf-utils.git
 ```
 
-This script takes the AGP output from PretextView and the TPF from rapid_split to generate new assembly tpfs
+This script takes the AGP output from PretextView and the original FASTA to generate new assembly fastas and supporting files
 
 Usage: 
 
 ```
-pretext-to-tpf [OPTIONS]
+pretext-to-asm [OPTIONS]
+
+  Uses fragments in the assembly (AGP) produced by PretextView to find
+  matching fragments in the assembly which was fed into Pretext and output an
+  assembly made from the input assembly fragments.
+
+  Named Chromsomes
+
+    Upper case letters followed by zero or more digits are assumed to be
+    chromosome names. e.g. 'X', 'W', 'B1'
+
+  Known Tags
+
+    Contaminant tagged scaffolds are saved in a separate
+    'Contaminants' file.
+
+    When there are large numbers of contaminant scaffolds in the   assembly,
+    Target tags can insted be used to label the   non-contaminant
+    scaffolds and reduce the amount of labelling   necessary in PretextView.
+    Any un-tagged scaffolds will then be   treated as if they were tagged with
+    Contaminant.   (Any contaminants occurring before the first
+    Target tag in   the PretextView AGP must still be individually
+    tagged with   Contaminant.)
+
+    Haplotig taggged scaffolds are saved in a separate 'Haplotigs'
+    file. The haplotig scaffolds receive names 'H_1' to 'H_n', sorted
+    and numbered from longest to shortest.
+
+    Unloc tagged scaffolds receive names 'CHR_unloc_1' to
+    'CHR_unloc_n', added to the end of their chromosome and
+    sorted and numbered from longest to shortest.
+
+  Haplotypes
+
+    Any other tags are assumed to be the name of a haplotype, and their
+    assemblies are placed in separate files. Unplaced scaffolds for each
+    haplotype are identified by their names beginning with the haplotype's
+    name followed by an underscore. i.e. 'Hap2_' for 'Hap2'
 
 Options:
-  -a, --assembly PATH             Assembly file from before curation, which is
-                                  usually a TPF.  [required]
+  -a, --assembly PATH             Assembly before curation, usually a FASTA
+                                  file. FASTA files will be indexed, creating
+                                  a '.fai' and a '.agp' file alongside the
+                                  assembly if they are missing or are older
+                                  than the FASTA.  [required]
   -p, --pretext PATH              Assembly file from Pretext, which is usually
                                   an AGP.  [required]
-  -o, --output FILE               Output file, usually a TPF. If not given,
-                                  prints to STDOUT in 'STR' format.
+  -o, --output FILE               Output file, usually a FASTA file. If not
+                                  given, prints to STDOUT in 'STR' format. The
+                                  output file type is determined from its
+                                  extension. If the outuput is FASTA ('.fa'),
+                                  an AGP format file ('.fa.agp') is also
+                                  written. Other output files are named after
+                                  the output file minus its extension.
   -c, --autosome-prefix TEXT      Prefix for naming autosomal chromosomes.
-                                  [default: RL_]
+                                  [default: SUPER_]
   -f, --clobber / --no-clobber    Overwrite an existing output file.
-                                  [default: no-clobber]
+                                  [default: clobber]
   -l, --log-level [DEBUG|INFO|WARNING|ERROR|CRITICAL]
                                   Diagnostic messages to show.  [default:
                                   INFO]
   -w, --write-log / -W, --no-write-log
                                   Write messages into a '.log' file alongside
-                                  the output file  [default: no-write-log]
+                                  the output file  [default: write-log]
   --help                          Show this message and exit.
+
 ```
 
 See https://github.com/sanger-tol/agp-tpf-utils# for complete documentation
-
-
-
-### [rapid_join.pl](-/blob/main/rapid_join.pl)
-
-This script takes an original assembly fasta file, a one-line per chromosome pre-csv file and the TPF file(s) generated from pretext-to-tpf and creates the finalised assembly fasta from the TPF file(s)
-
-Usage:
-
-```
-perl rapid_join.pl
-             -fa <fasta>
-             -tpf <tpf>
-             -csv <pre-csv>
-             -out <outfile_fasta_prefix>
-             -hap # optional use only if generating haplotigs fasta
-
-```
-
-### [rapid_join.py](-/blob/main/rapid_join.py)
-
-This script takes an original assembly fasta file, a one-line per chromosome pre-csv file and the TPF file(s) generated from pretext-to-tpf and creates the finalised assembly fasta from the TPF file(s)
-
-Usage:
-
-```
-python3 rapid_join.py
-             -f,--fasta <fasta>
-             -t,--tpf <tpf>
-             -c,--csv <pre-csv>
-             -o,-out <outfile_fasta_prefix>
-
-```
-
-
-
 
 ### Other scripts
 
