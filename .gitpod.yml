@@ -25,7 +25,7 @@ tasks:
 - name: SETUP - PRETEXT-TO-AGP
   init: |
     cd /workspace
-    git clone --depth 1 --branch v1.1.3 https://github.com/sanger-tol/agp-tpf-utils.git
+  git clone --depth 1 --branch v1.1.3 https://github.com/sanger-tol/agp-tpf-utils.git
 
 - name: SETUP - MAMBA ENVIRONMENT
   init: |
@@ -46,13 +46,13 @@ tasks:
   command: |
     cd /workspace
     /workspace/mambaforge/bin/mamba init bash
-    echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
+    echo 'alias pta="/workspace/mambaforge/bin/python3 /workspace/mambaforge/bin/pretext-to-asm"' >> ${HOME}/.bashrc
     source ${HOME}/.bashrc
     mamba activate rapid
     /workspace/mambaforge/bin/pip3 install click ruff bio gdown
-    /workspace/mambaforge/bin/gdown --folder --id 1Md0gD7VrmzlRM4xvxQKz2GG3Uyn00VHd
+    /workspace/mambaforge/bin/gdown --folder 1Md0gD7VrmzlRM4xvxQKz2GG3Uyn00VHd
     mv rapid_curation_test_data test_data
-    /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
+    /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/ 'tola-agp-tpf-utils[devel]'
     export PATH=/workspace:$PATH
     gp preview https://www.thebgacademy.org/BGA24/sessions/Genome-Curation
     clear
