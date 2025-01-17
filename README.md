@@ -48,8 +48,6 @@ Please also see documentation:
  
 ## Suggested workflow
 
-Split assembly fasta to create a TPF [rapid_split.pl](-/blob/main/rapid_split.pl]).
-
 Manipulate the assembly in PretextView app using Edit mode (E).
 Tag unlocalised scaffolds, haplotigs, contaminats, haplotypes etc, using meta-data tag mode (M) in PretextView.
 Unlocs (linked to chromosome but no specific location found) should be placed at the start/and/or/end 
@@ -60,14 +58,11 @@ Once the map has been rearranged and meta-data tags added paint the chromosomes 
 Export the map to AGP. (Some input scaffolds won't feature in the output AGP due to PretextView resolution.  
 These will be recovered in the next step).
 
-Run [pretext-to-tpf.py](https://github.com/sanger-tol/agp-tpf-utils.git) , pointing it at the TPF and the Pretext AGP. 
-This will output TPF(s) that mirror the chromosomes that have been built in PretextView, and which will have the same number 
-of basepairs as the original TPF.The script will produce stats (joins/breaks/hap-dup removals).
-
-Turn the new TPF back into a fasta file using [rapid_join.pl](-/blob/main/rapid_join.pl).
+Run [pretext-to-tasm](https://github.com/sanger-tol/agp-tpf-utils.git) , pointing it at the original FASTA and the Pretext AGP. 
+This will output a FASTA that mirrors the chromosomes that have been built in PretextView, and which will have the same number 
+of basepairs as the original TPF. The script will produce stats (joins/breaks/hap-dup removals).
 
 Produce a new Pretext map from the curated fasta file to check it.
-
 
 
 ## Scripts
