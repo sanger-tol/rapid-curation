@@ -5,7 +5,7 @@ tasks:
 - name: SETUP - Download PretextView
   init: |
     cd /workspace
-    wget  https://github.com/wtsi-hpag/PretextView/releases/download/0.2.5/PretextView_Linux-x86-64.zip
+    wget https://github.com/sanger-tol/PretextView/releases/download/1.0.0/PretextView_Linux-x86-64.zip
     unzip PretextView_Linux-x86-64.zip
 
 - name: SETUP - Download MiniProt
