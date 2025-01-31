@@ -10,9 +10,8 @@ This section will cover the curation tools and how they work.
 
 
 PretextView tutorial:
-* [PretextView-Tutorial](PretextView-Tutorial.pdf)
 * [YouTube video 1](https://youtu.be/3IL2Q4f3k3I)
-* [YouTube video 2](https://youtu.be/LWy6pwCQNDU)
+* [BGA24: Introduction to Manual Curation](https://www.youtube.com/watch?v=qlWZlFXy07w)
 
 
 PretextView can be obtained here https://github.com/wtsi-hpag/PretextView/releases
